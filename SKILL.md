@@ -59,6 +59,8 @@ Any request → complete it → check if EP exists → if not, auto-create one �
 **EP Auto-Create Quality:** Must produce high-quality, substantive content — not a skeleton full of placeholders. Use all available information from conversation, public research, and existing documents. *(Future: a dedicated data interface will pull customer/opportunity information directly.)*
 
 > 🚧 **Planned Enhancement — Account Intelligence Integration:** When creating or updating an EP, the agent should automatically load insights from **Account Analysis** and **Opportunity Management** reference documents (once available). Flow: know customer name → check EP → create/update EP → load account analysis + opp management data into EP → all downstream documents (Call Plan, EB, PMR) inherit this context from the EP. **Additionally, each time a new Call Plan is generated, re-run account analysis to ensure the EP contains the latest information** (company financials, recent news, industry trends, attendee backgrounds). This avoids redundant analysis across multiple documents while keeping data fresh.
+>
+> ⚠️ **Agent note:** Sections marked with 🚧 describe planned features that are not yet available. Agent should skip these steps silently — do not attempt to load non-existent files or report errors. Proceed with the rest of the workflow as normal.
 
 ### Rule 2: Close the Loop
 
