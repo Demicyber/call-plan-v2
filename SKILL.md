@@ -336,30 +336,47 @@ When information is insufficient to complete a document:
 ```
 Sales Rep Makes a Request
 │
-├─ New customer or first interaction?
-│   └─ YES → Collect minimum inputs (Section 4) → Confirm sales stage
+├─ Step 1: Identify customer & check pending items
+│   ├─ New customer or first interaction?
+│   │   └─ YES → Collect minimum inputs (Section 4) → Confirm sales stage
+│   └─ NO → Pull existing EP context
+│           └─ Check for pending PMRs and overdue action items (Rule 2) → Surface immediately if found
 │
-├─ Is it customer-related?
-│   ├─ YES → Route via Section 5
-│   │         ├─ Call Plan request? → Determine scenario (Section 6: stage → scenario mapping → confirm with user)
-│   │         │   └─ Load scenario guidance (call-plan-scenarios.md) for the confirmed scenario → use as focus lens for generating Call Plan
-│   │         ├─ Complete the requested task
-│   │         ├─ Information sufficient?
-│   │         │   ├─ YES → Generate full document
-│   │         │   └─ NO → Best-effort + mark gaps (Section 13)
-│   │         ├─ Check: EP exists?
-│   │         │   ├─ YES → Link task, update tracker
-│   │         │   └─ NO → Auto-create EP (high quality), then link
-│   │         ├─ Attendee roles known?
-│   │         │   ├─ Unknown → Ask rep before proceeding
-│   │         │   ├─ Executive → Apply CXO Persona (Rule 6)
-│   │         │   └─ Manager/IC → Role-based prep (Section 12)
-│   │         ├─ Apply Stage awareness (Rule 4)
-│   │         ├─ Check for coaching opportunities (Section 10)
-│   │         └─ Deliver as .docx → Ask sales to review (Rule 5)
-│   │
-│   └─ NO → Complete task as requested
+├─ Step 2: Ensure EP exists (Rule 1)
+│   ├─ EP exists? → YES → Continue
+│   └─ NO → Auto-create EP (high quality) → Continue
+│   └─ 🚧 (When available: load/refresh account analysis into EP)
 │
-└─ Post-Visit Trigger?
-    └─ YES → PMR (linked to Call Plan OR Executive Briefing) → Update EP (incremental + timestamps + gap detection) → Next Call Plan
+├─ Step 3: Route request & determine document type (Section 5)
+│   ├─ Call Plan request?
+│   │   ├─ Determine scenario (Section 6: stage → scenario mapping → confirm with user)
+│   │   └─ Load scenario guidance (call-plan-scenarios.md) → use as focus lens
+│   ├─ EBC / Internal briefing? → Prepare EB
+│   ├─ Post-meeting / follow-up? → Prepare PMR
+│   ├─ Status check? → Show EP summary → Done
+│   └─ Other customer-related request? → Complete task → Link to EP → Done
+│
+├─ Step 4: Enrich & generate
+│   ├─ Information sufficient?
+│   │   ├─ YES → Generate full document
+│   │   └─ NO → Best-effort + mark gaps + guide with examples (Section 13)
+│   ├─ (Call Plan / EB only) Attendee roles known?
+│   │   ├─ Unknown → Ask rep before proceeding
+│   │   ├─ Executive → Read INDEX.md first → Match persona → Load → Apply (Rule 6)
+│   │   └─ Manager/IC → Role-based prep (Section 12)
+│   └─ Apply Stage awareness (Rule 4)
+│
+├─ Step 5: Quality & coaching
+│   ├─ Validate against quality standards (Section 11)
+│   ├─ Check for coaching opportunities (Section 10)
+│   └─ Link document to EP → Update EP Roadmap
+│
+├─ Step 6: Deliver
+│   └─ Deliver as .docx → Ask sales to review (Rule 5)
+│
+└─ (PMR only) Post-visit close-the-loop
+    └─ After PMR is generated:
+        → Update EP (Section 9: incremental + timestamps + gap detection)
+        → Agent Recommendation (stage advancement? strategy adjustment?)
+        → Carry insights to next Call Plan
 ```
