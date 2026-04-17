@@ -87,3 +87,7 @@ Use this mapping to:
 4. **Identify gaps** blocking stage progression
 5. **Suggest stage advancement** when enough elements are confirmed
 6. **Coach on common pitfalls** — what mistakes are typical at this stage?
+
+---
+
+*Version: 2.0 | Last updated: 2026-04-17 | Part of the Customer Engagement Closed-Loop Flow*
