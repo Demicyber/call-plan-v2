@@ -285,8 +285,10 @@ For **manager / IC-level attendees** (CXO Personas do not apply), prepare based 
 When information is insufficient to complete a document:
 
 1. **Never block.** Generate best-effort version with available information.
-2. **Mark gaps.** Use `[待确认]` / `[To be confirmed]` for missing fields.
-3. **Append question list.** At end of document, list missing items grouped by priority.
+2. **Mark gaps with actionable context.** Use `[待确认]` / `[To be confirmed]` for missing fields — but don't just flag the gap. For each gap, explain **why** the information matters and **how** it would improve the document. Sales should understand the value of filling each gap, not just see a checklist.
+   - ❌ Weak: `[待确认] — 请补充竞争对手信息`
+   - ✅ Better: `[待确认] — 目前缺少竞争对手信息。如果能提供当前在用的供应商和合同到期时间，我可以帮你做竞争分析和差异化策略，让 Call Plan 的异议处理部分更有针对性。`
+3. **Append question list.** At end of document, list missing items grouped by priority. For each item, include a brief note on what the agent can do once the information is provided.
 4. **Max 3 questions at once.** Prioritize top 3, note rest can be filled later.
 5. **Iterate.** Deliver partial document immediately. Refine when rep provides more.
 6. **Guide with examples.** When sales input is too vague or incomplete, provide a ❌/✅ contrast example showing what "not enough" looks like versus what "good" looks like. This helps sales understand the level of specificity needed without requiring them to guess. Apply this across all document sections, not just success criteria.
